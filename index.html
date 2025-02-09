@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermotas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Adicionado AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+      <!-- FAVICON -->
+  <link rel="icon" type="image/x-icon" href="image\logo_supermotos_png.png">
+
+
+</head>
+
+
+<body>
+        <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="image/logo_supermotos_png.png" alt="Logo da Loja">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#motas">Motas</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#contactos">Contactos</a></li>
+            </ul>
+            <div class="menu-mobile" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero" data-aos="fade-down" data-aos-duration="1000">
+        <div class="hero-content">
+            <h1>As Melhores Motas Usadas</h1>
+            <p>Encontre a mota dos seus sonhos a um preço incrível!</p>
+            <a href="#motas" class="btn">Ver Motas</a>
+        </div>
+    </section>
+
+    <!-- Catálogo de Motas -->
+    <section id="motas" class="catalogo" data-aos="fade-up" data-aos-duration="1000">
+        <h2>Catálogo de Motas</h2>
+        <div class="filtros">
+            <button class="filtro-btn active" data-categoria="todas">Todas</button>
+            <button class="filtro-btn" data-categoria="moto4">Moto 4</button>
+            <button class="filtro-btn" data-categoria="Semi-novas">Semi-novas</button>
+            <button class="filtro-btn" data-categoria="Novas">Novas</button>
+        </div>
+        <div class="motas-grid">
+            <!-- Motas serão carregadas via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="sobre" data-aos="fade-right" data-aos-duration="1000">
+        <h2>Sobre Nós</h2>
+        <div class="sobre-content">
+            <div class="sobre-texto">
+                <p>Na Supermotas, somos especializados na venda de motas, oferecendo diversos modelos para entusiastas do motociclismo.  
+
+                    O nosso compromisso é fornecer produtos e serviços de qualidade, promovendo a cultura motociclística.  
+                    
+                    Visite-nos e descubra a mota perfeita para si!</p>
+            </div>
+            <div class="sobre-imagem">
+                <img src="image/ltr_supermotas.jpg" alt="Sobre Nós">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contactos -->
+    <section id="contactos" class="contactos" data-aos="fade-left" data-aos-duration="1000">
+        <h2>Contactos</h2>
+        <div class="contactos-content">
+            <div class="info">
+                <p><i class="fas fa-map-marker-alt"></i> Avenida Cruzeiro das Lampreia, Nº 727 4575-134 Cabeça Santa</p>
+                <p><i class="fas fa-phone"></i> 916100742</p>
+                <p><i class="fas fa-envelope"></i> supermotas029@gmail.com
+                </p>
+                <div class="redes-sociais">
+                    <a href="https://api.whatsapp.com/send?phone=916100742" target="_blank" rel="noopener noreferrer">
+                      <i class="fab fa-whatsapp"></i>
+                    </a><i></i>Fala conosco pelo WhatsApp</i>
+                    
+                </div>
+            </div>
+            <form class="form-contacto">
+                <input type="text" placeholder="Nome" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer data-aos="fade-up" data-aos-duration="1000">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Loja de Motas Semi-Novas e Usadas</h3>
+                <p>As melhores motas usadas do mercado.</p>
+            </div>
+          <!--  <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#motas">Motas</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#contactos">Contactos</a></li>
+                </ul>
+            </div>
+        -->
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <div class="redes-sociais">
+                    <a href="https://www.facebook.com/p/Supermotas-100063635320564/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/supermotas29/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=916100742" target="_blank" rel="noopener noreferrer">
+                      <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Botão "Voltar ao Topo" -->
+      <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+      </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Loja de Motas Usadas. Todos os direitos reservados.</p>
+        </div>
+
+    
+
+<!-- Botão "Voltar ao Topo" -->
+<div class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+</div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="voltarTopo.js"></script>
+    <!-- Adicionado AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init(); // Inicializa a biblioteca AOS
+    </script>
+</body>
+</html>

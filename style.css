@@ -1,0 +1,460 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden; /* Remove o scroll lateral */
+    margin: 0; /* Remove a margem padrão que pode causar o scroll */
+    overflow-x: hidden; /* Oculta a rolagem horizontal */
+    max-width: 100vw; /* Garante que o conteúdo não ultrapasse a largura da tela */
+}
+html, body {
+    overflow-x: hidden !important; /* Força a remoção do scroll lateral */
+    width: 100%;
+}
+
+
+
+
+
+
+header {
+    background-color: rgba(255, 255, 255, 0.2); /* Cinza escuro com 60% de transparência */
+    backdrop-filter: blur(0px); /* Efeito de desfoque no fundo */
+    color: #020202;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo img {
+    max-width: 150px;
+    transition: transform 0.3s ease;
+}
+
+header .logo img:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #f13c00;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e67e22;
+}
+
+.menu-mobile {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hero {
+    background-image: url('image/banshee.jpg'); /* Nova imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease;
+}
+
+.btn {
+    background-color: #e67e22;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #d35400;
+    transform: translateY(-5px);
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.catalogo, .sobre, .contactos {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.catalogo h2, .sobre h2, .contactos h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #e67e22;
+}
+
+.filtros {
+    margin-bottom: 20px;
+}
+
+.filtro-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.filtro-btn.active {
+    background-color: #e67e22;
+}
+
+.filtro-btn:hover {
+    transform: translateY(-3px); /* Move o botão ligeiramente para cima ao passar o mouse */
+}
+
+/* Layout do grid para exibir as motas */
+.motas-grid {
+    display: grid; /* Define um layout baseado em grade */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Cria colunas flexíveis com largura mínima de 250px */
+    gap: 20px; /* Espaço entre os itens do grid */
+}
+
+/* Estilização dos cartões das motas */
+.mota {
+    background-color: #fff; /* Define o fundo branco para cada cartão */
+    border: 1px solid #ddd; /* Adiciona uma borda cinza clara */
+    border-radius: 10px; /* Arredonda as bordas */
+    padding: 20px; /* Adiciona um espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo dentro do cartão */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animação suave para efeitos visuais */
+}
+
+/* Efeito ao passar o mouse sobre o cartão */
+.mota:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho do cartão */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para realce */
+}
+
+.mota img {
+    width: 100%;
+    height: 65%; /* Mantém a altura igual à largura */
+    aspect-ratio: 1 / 1; /* Força um formato quadrado */
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* Efeito ao passar o mouse sobre a imagem */
+.mota:hover img {
+    transform: scale(1.1); /* Aumenta ligeiramente a imagem */
+}
+
+/* Estilização do título de cada mota */
+.mota h3 {
+    margin: 10px 0; /* Adiciona espaçamento acima e abaixo do título */
+    font-size: 24px; /* Define um tamanho maior para o título */
+}
+
+/* Estilização do texto descritivo dentro do cartão */
+<!-- f.mota p {
+    margin: 5px 0; /* Adiciona espaçamento entre os parágrafos */
+    color: #555; /* Define uma cor cinza escuro para o texto */
+}
+
+/* Estilização do preço dentro do cartão */
+.mota .price {
+    font-size: 22px; /* Define um tamanho maior para o preço */
+    color: #e67e22; /* Define uma cor laranja para destacar o preço */
+    font-weight: bold; /* Torna o preço em negrito */
+}
+
+.sobre-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.sobre-imagem img {
+    max-width: 80%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.sobre-imagem img:hover {
+    transform: scale(1.05);
+}
+
+.contactos-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.info {
+    text-align: left;
+}
+
+.info p {
+    margin: 10px 0;
+}
+
+.redes-sociais a {
+    color: #e67e22;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.redes-sociais a:hover {
+    color: #d35400;
+}
+
+.form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-contacto input, .form-contacto textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.form-contacto input:focus, .form-contacto textarea:focus {
+    border-color: #e67e22;
+    outline: none;
+}
+
+.form-contacto button {
+    background-color: #e67e22;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-contacto button:hover {
+    background-color: #d35400;
+    transform: translateY(-3px);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #444;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    .sobre-content, .contactos-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+
+    .motas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta para colunas menores */
+        gap: 10px;
+        max-width: 100%; /* Garante que não ultrapassa a tela */
+        margin: 0 auto; /* Centraliza */
+        padding: 20px;
+    }
+
+    .mota img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+        border-radius: 10px;
+    }
+
+    .sobre-imagem img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.motas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* colunas de tamanho igual */
+    gap: 20px;
+    justify-content: center;
+    padding: 150px;
+}
+
+.mota-item {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.mota-item img {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+
+/* Estilo do botão "Voltar ao Topo" */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff2600;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+}
